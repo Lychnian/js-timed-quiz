@@ -4,38 +4,87 @@
         <title>Timed Quiz</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content=""width=device-width,initial-scale=1"/>
-        <link rel=""stylesheet" type=""text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="./assets/style.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Young+Serif&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <header>
-            <div class="header">
-                <!-- High Score -->
+            <section class="header">
+                <!--Button to view high scores -->
                 <div>
-                    <button class="button" id="scoreboard">View HighScores</button>
+                    <button class="button" id="gradechk">HighScores</button>
+                </div>
+                <!-- Timer display -->
+                <div>
+                    <p id="timer">Time Left: 60 s</p>
+                </div>
+            </section>
+        </header>
+       
+        <main>
+            <section>
+            
+            <!-- Start quiz section -->
+
+            <section class="startpg" id="startpg">
+                <div id="start">
+                    <h1>
+                        JavaScript Timed Quiz
+                    </h1>
+            
+                    <!-- Quiz Rules -->
+
+                    <p id="rules">Try to answer the following code-related questions within the time limit.<br>
+                            Keep in mind that incorrect answers will penalize your score time by ten seconds!
+                    </p>
+            
+                    <!-- Button to start the quiz -->
+            
+                    <button class="button" id="startbutton">Start Quiz</button>
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section class="questpg" id="questpg">
+                <div>
+                    <div>
+
+                        <!-- Question Text -->
+
+                        <h2 id="askquest">Ask the Question</h2>
+
+                        <!-- Options for the question -->
+
+                        <ul>
+                            <li><button class="options" id="ansbutton1"
+                                value="a">Answer1</button></li>
+                            <li><button class="options" id="ansbutton2"
+                                value="b">Answer2</button></li>
+                            <li><button class="options" id="ansbutton3"
+                                value="c">Answer3</button></li>
+                            <li><button class="options" id="ansbutton4"
+                                value="d">Answer4</button></li>                           
+                        </ul>
+
+
+                    </div>
+
+                </div>
+
+
+
+            </section>
+
+
                 </div>
 
 
 
 
 
-
-        </header>
-
-        <main>
-            <div>
-                <section class="startpage" id="startpage">
-                    <div id="starter"
-
-                </section>
-
-
-            </div>
-
-
-
-        </main>
-
+            </section>
+            </section>
 
 
 
