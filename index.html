@@ -15,6 +15,7 @@
                 <div>
                     <button class="button" id="gradechk">HighScores</button>
                 </div>
+
                 <!-- Timer display -->
                 <div>
                     <p id="timer">Time Left: 60 s</p>
@@ -25,37 +26,31 @@
         <main>
             <section>
             
-            <!-- Start quiz section -->
-
-            <section class="startpg" id="startpg">
-                <div id="start">
-                    <h1>
-                        JavaScript Timed Quiz
-                    </h1>
+                <!-- Start quiz section -->
+                <section class="startpg" id="startpg">
+                    <div id="start">
+                        <h1>
+                            JavaScript Timed Quiz
+                        </h1>
             
-                    <!-- Quiz Rules -->
-
-                    <p id="rules">Try to answer the following code-related questions within the time limit.<br>
+                        <!-- Quiz Rules -->
+                        <p id="rules">
+                            Try to answer the following code-related questions within the time limit.<br>
                             Keep in mind that incorrect answers will penalize your score time by ten seconds!
-                    </p>
+                        </p>
             
-                    <!-- Button to start the quiz -->
-            
-                    <button class="button" id="startbutton">Start Quiz</button>
-                </div>
-            </section>
+                        <!-- Button to start the quiz -->
+                        <button class="button" id="startbutton">Start Quiz</button>
+                    </div>
+                </section>
 
-            <!-- Questions Section -->
-            <section class="questpg" id="questpg">
-                <div>
+                <!-- Questions Section -->
+                <section class="questpg" id="questpg">
                     <div>
-
-                        <!-- Question Text -->
-
+                    <!-- Question Text -->
                         <h2 id="askquest">Ask the Question</h2>
 
                         <!-- Options for the question -->
-
                         <ul>
                             <li><button class="options" id="ansbutton1"
                                 value="a">Answer1</button></li>
@@ -66,37 +61,53 @@
                             <li><button class="options" id="ansbutton4"
                                 value="d">Answer4</button></li>                           
                         </ul>
-
-
                     </div>
+                    
+                    <!--Feedback message for correct or wrong answers -->
+                    <div id="feedback">
+                        <p>Correct or Wrong</p>
+                    </div>
+                    </div>
+                </section>
 
-                </div>
+                <!-- Final report section -->
+                <section class="results" id="results">
+                    <div>
+                        <h2 id="finish">All Done!</h2>
+                        <p id="finscr">Your Final Score Is:</p>
+                        <p>Enter Your Initials
+                            <input id="initial">
+                            <button class="button" id="subbutton">Submit</button>
+                        </p>
+                    </div>
+                </section>
 
+                <!-- High scores section -->
+                <section class="hspage" id="hspage">
+                    <div>
+                        <h2>High Scores</h2>
 
+                    <!-- Display user's record -->
+                        <div id="gradercd">
+                        <p>Your Record</p>
+                        </div>
 
+                    <!-- Buttons to go back and clear high scores -->
+                        <div>
+                            <button class="button" id="bkbutton">Go Back</button>
+                            <button class="button" id="clrbutton">Clear High Scores</button>
+                        </div> 
+                    </div>
+                </section>
             </section>
+        </main>
+        
+        <!-- Footer Section -->
+        <footer>
+            <p><pre>Made by🌷Helen Colon</pre></p>
+        </footer>
 
-
-                </div>
-
-
-
-
-
-            </section>
-            </section>
-
-
-
-
-
-
-
-
+        <!-- Link to external JavaScript file for interactivity-->
+        <script src="./assets/script.js"></script>
     </body>
-
-
-
-
-
 </html>
