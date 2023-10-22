@@ -1,7 +1,11 @@
+/*  Universal Settings */
+
 * {
     font-family: Young serif;
     box-sizing: border-box;
 }
+
+/* Header, body, main and pages styles */
 
 .header {
     display: flex;
@@ -11,20 +15,21 @@
 }
 
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
-    background-image: url("./images.mscode.jpg");
+    background-image: url("../images/mscode.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    justify-content: center;
+    
 }
 
 main {
-    text-align: center;
+    flex: 1 0 auto;   
     justify-content: center;
-    flex: 1 0 auto;
+    text-align: center;
     margin-left: 200px;
     margin-right: 200px;
 }
@@ -32,7 +37,174 @@ main {
 #startpg {
     background-color: skyblue;
     border: 8px;
+    border-color: black;
+    border-radius: 60px;
+    justify-self: center;
+    padding: 10px;
+    z-index: 0;
+    font-size: 40px;
+}
+
+.questpg {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 6px;
+    background-color: skyblue;
+    padding: 10px;
+    font-size: 40px;    
+}
+
+/* List Style */
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+    align-items: baseline;
+    padding-left: 50px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Start page on display, hide other pages */
+.questpg, .results, .hspage, #feedback {
+    display: none;
+    background-color: skyblue;
+    padding: 10px;
+    border: 8px;
+    border-color: black;
+    border-radius: 6px;
+    font-size: 40px;
+}
+
+/* Buttons and timer styles */
+.button{
+    background-color: ghostwhite;
+    border: 5px;
+    border-radius: 6px;
+    border-color: black;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#timer {
+    background-color: ghostwhite;
+    border: 5px;
+    border-color: black;
+    border-radius: 6px;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    padding: 10px;
+}
+
+p #timer {
+    background-color: ghostwhite;
+    border: 5px;
+    border-color: black;
+    border-radius: 6px;
+    font-weight: bold;
+    color: red;
+    padding: 10px;
+}
+
+/* Hover button and timer */
+.button:hover {
+    background-color: yellow;
+}
+
+#timer:hover {
+    background-color: yellow;
+}
+
+/* Footer style */
+footer {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    color: ghostwhite;
+    text-shadow: 6px 6px 10px hotpink;
+}
+
+
+/* Media queries */
+
+/* The main page will be alizarin crimson */
+@media only screen and (max-width: 992px) {
+    body {
 
 }
 
+    main {
+    margin-left:50px;
+    margin-right:50px;
 }
+
+    #startpg {
+    background-color: #E32636;
+}
+
+/* Start page on display, hide sections*/
+    .questpg, .results, .hspage, #feedback {
+    display: none;
+    background-color: #E32636;
+}
+}
+
+
+/* The main page will be crayola green */
+@media only screen and (max-width: 600px) {
+body {
+    font-size: 120%;
+}
+
+main {
+  	margin-left:12px;
+  	margin-right:12px;
+}
+
+#startpg {
+    background-color: #1CAC78;
+}
+
+/* Start page on display, hide sections */
+.questpg, .results, .hspage, #feedback {
+    background-color: #1CAC78;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
