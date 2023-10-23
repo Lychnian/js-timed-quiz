@@ -87,7 +87,6 @@ var quizQuestions = [
 
 ]; 
 
-
 // Global Variables
 var secondsLeft = 60;
 var currentQuestionIndex = 0;
@@ -100,19 +99,15 @@ function startCountdownTimer() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timerElement.textContent = "Time left:" + secondsLeft + "s";
-
-        If (secondsLeft <= 0 || questionCount > quizQuestions.length) {
+        
+        if (secondsLeft <= 0 || questionCount > quizQuestions.length) {        
             clearInterval(timerInterval);
-            timerElement.textContent = "Time is up!";
-            finishElement.textContent = "Time is up!";
+            timerElement.textContent = "Sorry! Out of Time!";
+            finishElement.textContent = "Sorry! Out of Time!";
             endQuiz();
-
         }
-
     }, 1000);
-    
 } 
-
 
 // Hide start page and show quiz function
 function hideStartPageAndShowQuiz() {
@@ -126,18 +121,92 @@ function hideStartPageAndShowQuiz() {
 
 }
 
-
-//Function to shuffle an array (Fisher-Yates shuffle algorithm)
+// Function to shuffle an array, Fisher-Yates shuffle algorithm
 function shuffleQuestionsArray(array) {
-    for (var i = array.length -1; i > 0; i--) {
+    for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
-
     }
 }
 
+// For Loop to Display current question and answer choices
+function displayCurrentQuestion(index) {
+    questionTextElement.textContent = quizQuestions[index].question;
+    for (var i = 0; i < answerButtonsElements.length; i++) {
+        answerButtonsElements[i].textContent = quizQuestions[index].options[i];
+    }
+    currentQuestionIndex = index;
+}
 
-    
+// Check user's answer
+function checkUserAnswer(event) {
+    event.preventDefault();
+    feedbackMessageElement.style.display = "block";
+    setTimeout(function() {
+        feedbackMessageElement.style.display = 'none';
+    }, 1000);
+
+    if (quizQuestions[currentQuestionIndex].answer === event.target.value) {
+        feedbackMessageElement.textContent = "Correct!";
+        totalScore++;
+    } else {
+        secondsLeft -= 10;
+        feedbackMessageElement.textContent = "Wrong! The correct answer is " + quizQuestions[currentQuestionIndex].answer + ".";
+    }
+
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+        displayCurrentQuestion(currentQuestionIndex + 1);
+    } else {
+        endQuiz();
+    }
+    questionCount++;
+}
+
+// End the game and display the final score
+function endQuiz() {
+    questionPageElement.style.display = "none";
+    resultsElement.style.display = "block";
+    finalScoreElement.textContent = "Your final score is: " + totalScore;
+    timerElement.style.display = "none";
+}
+
+// Get high scores from local storage
+function getHighScores() {
+    var currentScores = localStorage.getItem("HighScores");
+    if (currentScores !== null) {
+        return JSON.parse(currentScores);
+    } else {
+        return [];
+    }
+}
+
+// Render high scores to the scoreboard
+function renderHighScores() {
+    var highScores = getHighScores().sort(function(a, b) {
+        return b.score - a.score;
+    }).slice(0, 5);
+
+    for (var i = 0; i < highScores.length; i++) {
+        var item = highScores[i];
+        var li = document.createElement("li");
+        li.textContent = item.user + " - " + item.score;
+        li.setAttribute("data-index", i);
+        scoreRecordElement.appendChild(li);
+    }
+}
+
+// Save user's score to local storage
+function saveUserScore() {
+    var scoreItem = {
+        user: userInitialElement.value,
+        score: totalScore
+    };
+    var scoreList = getHighScores();
+    scoreList.push(scoreItem);
+    localStorage.setItem("HighScores", JSON.stringify(scoreList));
+    renderHighScores();
+}
+
 
 
 
