@@ -89,7 +89,6 @@ var quizQuestions = [
 
 
 // Global Variables
-
 var secondsLeft = 60;
 var currentQuestionIndex = 0;
 var totalScore = 0;
@@ -115,6 +114,30 @@ function startCountdownTimer() {
 } 
 
 
+// Hide start page and show quiz function
+function hideStartPageAndShowQuiz() {
+    startPageElement.style.display = "none";
+    questionPageElement.style.display = "block";
+    currentQuestionIndex = 0;
+    // Shuffle the questions array
+    shuffleQuestionsArray(quizQuestions);
+    startCountdownTimer();
+    displayCurrentQuestion(currentQuestionIndex);
+
+}
+
+
+//Function to shuffle an array (Fisher-Yates shuffle algorithm)
+function shuffleQuestionsArray(array) {
+    for (var i = array.length -1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+
+    }
+}
+
+
+    
 
 
 
