@@ -19,13 +19,13 @@ var backButtonElement = document.querySelector("#bkbutton");
 var clearButtonElelment = document.querySelector("#clrbutton");
 
 //Quiz questions and answers
-var quizQuestions =[
+var quizQuestions = [
 
     {
 
-            question: "A very useful tool used during developement and debugging for printing content to the debugger is ________.",
-            options: ["a. JavaScript", "b. for loops", "c. terminal/bash", "d. console.log"],
-            answer: "d"
+        question: "A very useful tool used during developement and debugging for printing content to the debugger is ________.",
+        options: ["a. JavaScript", "b. for loops", "c. terminal/bash", "d. console.log"],
+        answer: "d"
 
     },
 
@@ -87,6 +87,32 @@ var quizQuestions =[
 
 ]; 
 
+
+// Global Variables
+
+var secondsLeft = 60;
+var currentQuestionIndex = 0;
+var totalScore = 0;
+var questionCount = 1;
+
+/* Functions */
+// Timer countdown function
+function startCountdownTimer() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timerElement.textContent = "Time left:" + secondsLeft + "s";
+
+        If (secondsLeft <= 0 || questionCount > quizQuestions.length) {
+            clearInterval(timerInterval);
+            timerElement.textContent = "Time is up!";
+            finishElement.textContent = "Time is up!";
+            endQuiz();
+
+        }
+
+    }, 1000);
+    
+} 
 
 
 
