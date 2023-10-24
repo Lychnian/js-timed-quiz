@@ -17,7 +17,7 @@ N/A
 - How to Play
 
 - Screenshots
-
+  
 - Credits
 
 - License
@@ -52,6 +52,17 @@ http://lychnian.github.io/js-timed-quiz/
 
 ## Screenshots
 
+
+![JS Timed Quiz Game](https://github.com/Lychnian/js-timed-quiz/assets/140586279/fa0f2c7e-b269-49c2-b8d6-3487e206e5d2)
+
+
+![Quiz Sample Question](https://github.com/Lychnian/js-timed-quiz/assets/140586279/59c685df-35bd-41ec-bca5-90260fd7f8e8)
+
+
+![High Scores Page](https://github.com/Lychnian/js-timed-quiz/assets/140586279/89f8421e-23e2-4484-a7c2-ce911c372ef1)
+
+
+![Your Record Page](https://github.com/Lychnian/js-timed-quiz/assets/140586279/b8bc4a23-764b-4f39-9f9c-ad35d1735504)
 
 
 
