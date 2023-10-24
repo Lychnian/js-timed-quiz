@@ -1,7 +1,7 @@
 /*  Universal Settings */
 
 * {
-    font-family: Young serif;
+    font-family: 'Inter', sans-serif;
     box-sizing: border-box;
 }
 
@@ -30,6 +30,7 @@ main {
     flex: 1 0 auto;   
     justify-content: center;
     text-align: center;
+    font-size: 24px;
     margin-left: 200px;
     margin-right: 200px;
 }
@@ -69,6 +70,10 @@ li {
     margin-bottom: 10px;
 }
 
+.options {
+    font-size: 24px;
+}
+
 /* Start page on display, hide other pages */
 .questpg, .results, .hspage, #feedback {
     display: none;
@@ -81,7 +86,7 @@ li {
 }
 
 /* Buttons and timer styles */
-.button{
+.button {
     background-color: ghostwhite;
     border: 5px;
     border-radius: 6px;
@@ -134,8 +139,6 @@ footer {
 
 
 /* Media queries */
-
-/* The main page will be alizarin crimson */
 @media only screen and (max-width: 960px) {
 body {
     font-size: 100%;
@@ -145,65 +148,15 @@ main {
     margin-left:50px;
     margin-right:50px;
 }
-
-#startpg {
-    background-color: #E32636;
 }
 
-/* Start page on display, hide sections*/
-.questpg, .results, .hspage, #feedback {
-    display: none;
-    background-color: #E32636;
-}
-}
-
-/* The main page will be crayola green */
 @media only screen and (max-width: 550px) {
 body {
     font-size: 120%;
 }
 
 main {
-  	margin-left:12px;
-  	margin-right:12px;
-}
-
-#startpg {
-    background-color: #1CAC78;
-}
-
-/* Start page on display, hide sections */
-.questpg, .results, .hspage, #feedback {
-    background-color: #1CAC78;
+  	margin-left:10px;
+  	margin-right:10px;
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
