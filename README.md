@@ -36,7 +36,7 @@ N/A
 ## Getting Started
 
 You can play the game live by visiting the JavaScript Timed Quiz Game website at:
-http://lychnian.github.io/js-timed-quiz/
+https://lychnian.github.io/js-timed-quiz/
 
 
 ## How to Play
